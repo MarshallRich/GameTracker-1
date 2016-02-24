@@ -12,6 +12,7 @@ public class Main {
     static HashMap<String, User> users = new HashMap<>();
 
     public static void main(String[] args) {
+        Spark.externalStaticFileLocation("public");
         Spark.init();
         Spark.get(
                 "/",
