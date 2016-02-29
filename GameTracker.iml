@@ -10,5 +10,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.sparkjava:spark-core:2.3" level="project" />
     <orderEntry type="library" name="com.sparkjava:spark-template-mustache:2.3" level="project" />
+    <orderEntry type="library" name="h2-1.4.191" level="project" />
   </component>
 </module>

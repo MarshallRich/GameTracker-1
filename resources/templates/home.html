@@ -24,12 +24,40 @@
         <option value="wiiu">Wii U</option>
     </select>
     <input type="number" placeholder="Release Year" name="gameYear"/>
+
     <button type="submit">Submit</button>
 </form>
 
+
 <ol>
     {{#games}}
-    <li>{{name}} - {{genre}} - {{platform}} - {{releaseYear}}</li>
+    <li>{{name}} - {{genre}} - {{platform}} - {{releaseYear}}
+        <form action="/delete-game" method="post">
+            <input type="hidden" value="{{id}}" name="deleteNumber"/>
+            <button type="submit">Delete</button>
+        </form>
+
+        <form action="/edit-game" method="post">
+            <input type="text" placeholder="Game name" name="editName" width="200"/>
+            <select name="editGenre">
+                <option selected disabled>Genre</option>
+                <option value="adventure">Adventure</option>
+                <option value="rpg">RPG</option>
+                <option value="strategy">Strategy</option>
+                <option value="shooter">Shooter</option>
+            </select>
+            <select name="editPlatform">
+                <option selected disabled>Platform</option>
+                <option value="pc">PC</option>
+                <option value="ps4">PS4</option>
+                <option value="xbone">XBox One</option>
+                <option value="wiiu">Wii U</option>
+            </select>
+            <input type="number" placeholder="Release Year" name="editYear"/>
+            <input type="hidden" value="{{id}}" name="editNumber"/>
+            <button type="submit">Edit</button>
+        </form>
+    </li>
     {{/games}}
 </ol>
 </body>
